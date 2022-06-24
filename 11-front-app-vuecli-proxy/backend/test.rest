@@ -1,0 +1,6 @@
+http://localhost:3000/api/creatures
+###
+POST http://localhost:3000/api/creatures
+Content-Type: application/json
+
+{"name": "pikatu", "hp": 100}
