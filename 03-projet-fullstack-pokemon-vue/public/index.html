@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"> <!-- car public es servi sur /-->
+    <script src="/js/script.js"></script>
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <title>Random webapp</title>
+</head>
+
+<body>
+    <div id="vue_root">
+        <p>
+            Pokemons {{ pokemons }}
+            <button v-on:click="fetchPokemons">Récupérer les pokemons depuis le serveur</button>
+            <button v-on:click="postPokemon">Ajouter un pokémon</button>
+        </p>
+        <div>
+            <p>Saisir un nom: <input v-model="pokemonToAdd.name" /></p>
+            <p>Saisir les hp: <input v-model="pokemonToAdd.hp" /></p>
+            <p>Le pokémon à ajouter aura comme valeur: {{ pokemonToAdd }}</p>
+        </div>
+        <ul id="pokemonList">
+            <li v-for="pokemon in pokemons">
+                {{ pokemon.name }}: {{ pokemon.hp }} HP
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
