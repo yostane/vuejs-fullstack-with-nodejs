@@ -7,8 +7,12 @@
       <input type="number" name="hp" v-model="newCreature.hp" />
       <button v-on:click="postCreature">Ajouter</button>
     </div>
-    <h1>List des créatures</h1>
+    <h1>List des créatures avec :key="creature.id"</h1>
     <span v-for="creature in creatures" :key="creature.id">
+      {{ creature.name }} - {{ creature.hp }} HP |
+    </span>
+    <h1>List des créatures avec :key="index"</h1>
+    <span v-for="(creature, index) in creatures" :key="index">
       {{ creature.name }} - {{ creature.hp }} HP |
     </span>
   </div>
